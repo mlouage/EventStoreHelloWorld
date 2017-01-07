@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{239B982C-74DA-4716-82BA-ACCACDA0E6E1}</ProjectGuid>
+    <ProjectGuid>{6159E1AF-41D2-4A5E-8857-B9A6C8C9D6A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Contracts</RootNamespace>
-    <AssemblyName>Contracts</AssemblyName>
+    <RootNamespace>Domain.Services</RootNamespace>
+    <AssemblyName>Domain.Services</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,22 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\BepaalDeposantAanspraak.cs" />
-    <Compile Include="Commands\BepaalDeposantBesluitInformatie.cs" />
-    <Compile Include="Commands\CreateDeposant.cs" />
-    <Compile Include="Commands\UpdateDeposantGegevens.cs" />
-    <Compile Include="Commands\UpdateDeposantRekening.cs" />
-    <Compile Include="Events\DeposantAanspraakBepaaldEvent.cs" />
-    <Compile Include="Events\DeposantBesluitInformatieBepaaldEvent.cs" />
-    <Compile Include="Events\DeposantCreatedEvent.cs" />
-    <Compile Include="Events\DeposantGegevensUpdatedEvent.cs" />
-    <Compile Include="Events\DeposantRekeningUpdatedEvent.cs" />
+    <Compile Include="Deposant\IDeposantService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entities\Entities.csproj">
-      <Project>{5576cbd9-a901-42d4-9d3d-984a427449ba}</Project>
-      <Name>Entities</Name>
+    <ProjectReference Include="..\Contracts\Contracts.csproj">
+      <Project>{239b982c-74da-4716-82ba-accacda0e6e1}</Project>
+      <Name>Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

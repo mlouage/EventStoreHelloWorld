@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AggregateFactory.cs" />
     <Compile Include="AggregateBase.cs" />
+    <Compile Include="Deposant\DeposantService.cs" />
     <Compile Include="Deposant\DeposantState.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IState.cs" />
@@ -54,6 +55,10 @@
     <ProjectReference Include="..\Contracts\Contracts.csproj">
       <Project>{239b982c-74da-4716-82ba-accacda0e6e1}</Project>
       <Name>Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Services\Domain.Services.csproj">
+      <Project>{6159e1af-41d2-4a5e-8857-b9a6c8c9d6a9}</Project>
+      <Name>Domain.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entities\Entities.csproj">
       <Project>{5576CBD9-A901-42D4-9D3D-984A427449BA}</Project>

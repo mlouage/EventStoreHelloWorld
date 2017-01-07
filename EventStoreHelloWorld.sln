@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entiti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStorage", "EventStorage\EventStorage.csproj", "{4BF04675-CA5A-43A6-B3AF-A5FBED9093A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Services", "Domain.Services\Domain.Services.csproj", "{6159E1AF-41D2-4A5E-8857-B9A6C8C9D6A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4BF04675-CA5A-43A6-B3AF-A5FBED9093A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BF04675-CA5A-43A6-B3AF-A5FBED9093A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BF04675-CA5A-43A6-B3AF-A5FBED9093A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6159E1AF-41D2-4A5E-8857-B9A6C8C9D6A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6159E1AF-41D2-4A5E-8857-B9A6C8C9D6A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6159E1AF-41D2-4A5E-8857-B9A6C8C9D6A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6159E1AF-41D2-4A5E-8857-B9A6C8C9D6A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

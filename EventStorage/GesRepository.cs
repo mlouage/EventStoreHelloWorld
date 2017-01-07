@@ -6,7 +6,7 @@ using EventStore.ClientAPI;
 
 namespace EventStorage
 {
-    public class GesRepository
+    public class GesRepository : IRepository
     {
         private readonly IEventStoreConnection _connection;
         private readonly AggregateFactory _factory;
@@ -17,7 +17,7 @@ namespace EventStorage
             _factory = factory;
         }
 
-        public T GetById<T>(Guid id) where T : IAggregate
+        public T GetById<T>(Guid id) where T : class, IAggregate
         {
             var events = new List<object>();
             StreamEventsSlice currentSlice;

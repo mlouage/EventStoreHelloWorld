@@ -23,7 +23,7 @@ namespace Domain.Deposant
             Apply(new DeposantCreatedEvent { Id = id, DeposantNummer = deposantNummer });
         }
 
-        public void UpdateGegevens(Guid id, string naam, string voornaam, string adres, string huisnummer, 
+        public void UpdateGegevens(string naam, string voornaam, string adres, string huisnummer, 
             string postcode, string gemeente, string land)
         {
             if (State.Version <= 0)
@@ -38,7 +38,7 @@ namespace Domain.Deposant
 
             Apply(new DeposantGegevensUpdatedEvent
             {
-                Id = id,
+                Id = State.Id,
                 DeposantGegevens = new Gegevens
                 {
                     Naam = naam,
@@ -52,7 +52,7 @@ namespace Domain.Deposant
             });
         }
 
-        public void AddRekening(Guid id, string rekeningnummer, string bic, decimal saldo, string valuta)
+        public void UpdateRekening(string rekeningnummer, string bic, decimal saldo, string valuta)
         {
             if (State.Version <= 0)
             {
@@ -66,7 +66,7 @@ namespace Domain.Deposant
 
             Apply(new DeposantRekeningUpdatedEvent
             {
-                Id = id,
+                Id = State.Id,
                 Rekening = new Rekening
                 {
                     RekeningNummer = rekeningnummer,
@@ -77,7 +77,7 @@ namespace Domain.Deposant
             });
         }
 
-        public void BepaalAanspraak(Guid id, decimal saldo, bool bepaald)
+        public void BepaalAanspraak(decimal saldo, bool bepaald)
         {
             if (State.Version <= 0)
             {
@@ -96,7 +96,7 @@ namespace Domain.Deposant
 
             Apply(new DeposantAanspraakBepaaldEvent
             {
-                Id = id,
+                Id = State.Id,
                 Aanspraak = new Aanspraak
                 {
                     Saldo = saldo,
@@ -105,7 +105,7 @@ namespace Domain.Deposant
             });
         }
 
-        public void BepaalBesluitInformatie(Guid id, int besluit, decimal aanspraak)
+        public void BepaalBesluitInformatie(int besluit, decimal aanspraak)
         {
             if (State.Version <= 0)
             {
@@ -124,7 +124,7 @@ namespace Domain.Deposant
 
             Apply(new DeposantBesluitInformatieBepaaldEvent
             {
-                Id = id,
+                Id = State.Id,
                 BesluitInformatie = new BesluitInformatie
                 {
                     Besluit = besluit,
