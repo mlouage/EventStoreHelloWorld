@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain;
 using EventStore.ClientAPI;
-using Newtonsoft.Json;
 
-namespace EventStoreHelloWorld
+namespace EventStorage
 {
     public class GesRepository
     {
@@ -32,7 +29,7 @@ namespace EventStoreHelloWorld
                     .ReadStreamEventsForwardAsync(streamName, nextSliceStart, 200, false)
                     .Result;
                 nextSliceStart = currentSlice.NextEventNumber;
-                events.AddRange(currentSlice.Events.Select(x => x.DeserializeEvent()));
+                events.AddRange(currentSlice.Events.Select(x => ExtendsGesRepository.DeserializeEvent(x)));
             } while (!currentSlice.IsEndOfStream);
 
             var aggregate = _factory.Create<T>(events);
@@ -48,7 +45,7 @@ namespace EventStoreHelloWorld
                 return;
 
             var streamName = GetStreamName(aggregate.GetType(), aggregate.Id);
-            var originalVersion = aggregate.Version - events.Count();
+            var originalVersion = aggregate.Version - events.Length;
             var expectedVersion = originalVersion == 0 ? ExpectedVersion.NoStream : originalVersion - 1;
             var commitHeaders = new Dictionary<string, object>
             {
@@ -71,7 +68,7 @@ namespace EventStoreHelloWorld
 
         private string GetStreamName(Type type, Guid id)
         {
-            return string.Format("{0}-{1}", type.Name, id);
+            return $"{type.Name}-{id}";
         }
     }
 }

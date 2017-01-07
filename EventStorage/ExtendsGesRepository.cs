@@ -5,7 +5,7 @@ using EventStore.ClientAPI;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace EventStoreHelloWorld
+namespace EventStorage
 {
     public static class ExtendsGesRepository
     {

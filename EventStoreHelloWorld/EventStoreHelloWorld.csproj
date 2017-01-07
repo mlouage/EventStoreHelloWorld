@@ -51,9 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GesConnection.cs" />
-    <Compile Include="ExtendsGesRepository.cs" />
-    <Compile Include="GesRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +66,14 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{dea46774-b9c6-4488-8a44-0682e2518f43}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{5576cbd9-a901-42d4-9d3d-984a427449ba}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventStorage\EventStorage.csproj">
+      <Project>{4bf04675-ca5a-43a6-b3af-a5fbed9093a2}</Project>
+      <Name>EventStorage</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

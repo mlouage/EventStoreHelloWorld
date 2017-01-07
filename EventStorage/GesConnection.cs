@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using EventStore.ClientAPI;
 
-namespace EventStoreHelloWorld
+namespace EventStorage
 {
     public static class GesConnection
     {
